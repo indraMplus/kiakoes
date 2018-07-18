@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">kiakoe</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_prev">Previous</string>
+    <string name="title_next">Next</string>
+    <string name="title_new_user">New User</string>
+    <string name="title_list_user">List User</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_done">Register</string>
+    <string name="title_dashboard">Dashboard</string>
+
+    <!--hint-->
+    <string name="hint_user">what login do you want</string>
+    <string name="hint_email">Enter your Email address</string>
+    <string name="hint_email_confirm">Confirm Email</string>
+    <string name="hint_pass_confirm">Hint for remembering your password</string>
+
+    <string name="hint_surname">Enter your Surename</string>
+    <string name="hint_firstname">Enter your First name</string>
+    <string name="hint_gender">Female</string>
+    <string name="hint_date">dd/mm/yyyy</string>
+    <string name="hint_mobile">Your Mobile no</string>
+
+    <string name="confirms">By Submitting this form you agree that you have read and accept the Kia Koe Terms and Conditions and you confirm that you wish to be a member of the Kia Koe political party.</string>
+
+    <string-array name="array_country">
+        <item>Vanuatu</item>
+        <item>Ireland</item>
+    </string-array>
+    <!-- String Array gender-->
+    <string-array name="array_gen">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string name="title_activity_list_user">ListUser</string>
+    <string name="title_activity_register2">RegisterActivity2</string>
+    <string name="email_confirm">Confirm your email</string>
+    <string name="title_activity_register_done">RegisterDone</string>
+</resources>

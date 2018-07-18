@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor"
+    tools:context=".RegisterDone">
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigationDone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/formColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/menu_done" />
+
+    <RelativeLayout
+        android:layout_width="368dp"
+        android:layout_height="551dp"
+        android:background="@color/bgColor"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="28dp"
+            app:srcCompat="@drawable/kiakoelogos" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="58dp"
+            android:layout_marginStart="58dp"
+            android:text="Your Location"
+            android:textColor="@color/txtColor"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageView4"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/imageView4"
+            android:layout_marginTop="86dp"
+            android:text="Country"
+            android:textColor="@color/txtColor"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageView4"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/imageView4"
+            android:layout_marginTop="122dp"
+            android:text="Mobile No *"
+            android:textColor="@color/txtColor"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etMobileNo"
+            android:layout_width="242dp"
+            android:layout_height="21dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/textView18"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/border"
+            android:ems="10"
+            android:hint="@string/hint_mobile"
+            android:inputType="phone"
+            android:textColor="@color/txColor"
+            android:textColorHint="@color/txColor"
+            android:textSize="12sp" />
+
+        <Spinner
+            android:id="@+id/spLocation"
+            style="@style/spinner_style"
+            android:layout_width="243dp"
+            android:layout_alignLeft="@+id/etMobileNo"
+            android:layout_alignStart="@+id/etMobileNo"
+            android:layout_alignTop="@+id/textView16"
+            android:entries="@array/array_country"
+            android:popupBackground="@color/txColor" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignLeft="@+id/imageView4"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/imageView4"
+            android:layout_marginTop="189dp"
+            app:srcCompat="@drawable/kiakoelogos" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView5"
+            android:layout_alignLeft="@+id/textView9"
+            android:layout_alignStart="@+id/textView9"
+            android:text="Confirmations"
+            android:textColor="@color/txtColor"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageView4"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/imageView4"
+            android:layout_marginTop="235dp"
+            android:text="Confirm"
+            android:textColor="@color/txtColor"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageView4"
+            android:layout_alignStart="@+id/imageView4"
+            android:layout_below="@+id/textView20"
+            android:text="@string/confirms"
+            android:textColor="@color/txtColor"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
