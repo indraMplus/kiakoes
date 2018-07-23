@@ -81,7 +81,7 @@ public class RegisterDone extends AppCompatActivity {
         //data from register 2
         final String usr2 = intent.getStringExtra(RegisterActivity2.USERNAME);
         final String em2 = intent.getStringExtra(RegisterActivity2.EMAIL);
-        final String emc2 = intent.getStringExtra(RegisterActivity2.EMAIL_CONFIRM);
+        //final String emc2 = intent.getStringExtra(RegisterActivity2.EMAIL_CONFIRM);
         final String pa2 = intent.getStringExtra(RegisterActivity2.PASSWORD);
         final String pac2 = intent.getStringExtra(RegisterActivity2.PASSWORD_CONFIRM);
         final String pah2 = intent.getStringExtra(RegisterActivity2.PASSWORD_HINT);
@@ -107,7 +107,7 @@ public class RegisterDone extends AppCompatActivity {
             public void onClick(View v) {
 //                boolean isInserted = myDb.insertData(sures,first,gends,dates,usr2,em2,emc2,pa2,pac2,pah2,spDone.getSelectedItem().toString(),spCons.getSelectedItem().toString()
 //                        ,mobile.getText().toString(), prevImg);
-                databaseHelper.addUser(sures,first,gends,dates,usr2,em2,emc2,pa2,pac2,pah2,spDone.getSelectedItem().toString(),spCons.getSelectedItem().toString()
+                databaseHelper.addUser(sures,first,gends,dates,usr2,em2,pa2,pac2,pah2,spDone.getSelectedItem().toString(),spCons.getSelectedItem().toString()
                         ,mobile.getText().toString(), prevImg);
                 Log.d("aaa","gambar" +prevImg);
 

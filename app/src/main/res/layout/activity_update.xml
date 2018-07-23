@@ -93,17 +93,18 @@
         android:textColorHint="@color/txColor"
         android:textSize="16sp" />
 
-    <!--<EditText-->
-        <!--android:id="@+id/editTextPassword"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginBottom="8dp"-->
-        <!--android:layout_marginTop="8dp"-->
-        <!--android:background="@drawable/border"-->
-        <!--android:hint="Enter Password"-->
-        <!--android:textColor="@color/text"-->
-        <!--android:textColorHint="@color/txColor"-->
-        <!--android:textSize="16sp" />-->
+    <EditText
+        android:id="@+id/editTextpassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/border"
+        android:inputType="textPassword"
+        android:hint="Enter Password"
+        android:textColor="@color/text"
+        android:textColorHint="@color/txColor"
+        android:textSize="16sp" />
 
     <TextView
         android:layout_width="match_parent"

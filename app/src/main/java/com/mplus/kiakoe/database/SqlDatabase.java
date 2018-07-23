@@ -53,7 +53,7 @@ public class SqlDatabase extends SQLiteOpenHelper {
     private static final String KEY_DATEBIRTH = "datebirth";
     private static final String KEY_USERNAME = "username";
     private static final String KEY_EMAIL = "email";
-    private static final String KEY_EMAILCONFIRM = "emailconfirm";
+    //private static final String KEY_EMAILCONFIRM = "emailconfirm";
     private static final String KEY_PASSWORD = "password";
     private static final String KEY_PASSWORDCONFIRM = "passwordconfirm";
     private static final String KEY_PASWORDHINT = "passwordhint";
@@ -73,7 +73,6 @@ public class SqlDatabase extends SQLiteOpenHelper {
             + KEY_DATEBIRTH + " TEXT, "
             + KEY_USERNAME + " TEXT,"
             + KEY_EMAIL + " TEXT, "
-            + KEY_EMAILCONFIRM + " TEXT,"
             + KEY_PASSWORD + " TEXT, "
             + KEY_PASSWORDCONFIRM + " TEXT,"
             + KEY_PASWORDHINT + " TEXT, "
@@ -108,7 +107,7 @@ public class SqlDatabase extends SQLiteOpenHelper {
     }
     //new
     public boolean addUser(String surename, String firstname, String gender, String datebirth,
-                        String username, String email, String emailconfirm, String password,
+                        String username, String email, String password,
                         String passwordconfirm, String passwordhint, String country, String constituency,
                         String mobile, String imageuser) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -120,7 +119,7 @@ public class SqlDatabase extends SQLiteOpenHelper {
         values.put(KEY_DATEBIRTH, datebirth);
         values.put(KEY_USERNAME, username);
         values.put(KEY_EMAIL, email);
-        values.put(KEY_EMAILCONFIRM, emailconfirm);
+        //values.put(KEY_EMAILCONFIRM, emailconfirm);
         values.put(KEY_PASSWORD, password);
         values.put(KEY_PASSWORDCONFIRM, passwordconfirm);
         values.put(KEY_PASWORDHINT, passwordhint);
@@ -179,6 +178,7 @@ public class SqlDatabase extends SQLiteOpenHelper {
                      userModel.setDatebirth(c.getString(c.getColumnIndex(KEY_DATEBIRTH)));
                      userModel.setUsername(c.getString(c.getColumnIndex(KEY_USERNAME)));
                      userModel.setEmail(c.getString(c.getColumnIndex(KEY_EMAIL)));
+                     userModel.setPassword(c.getString(c.getColumnIndex(KEY_PASSWORD)));
                      userModel.setCountry(c.getString(c.getColumnIndex(KEY_COUNTRY)));
                      userModel.setConstituency(c.getString(c.getColumnIndex(KEY_CONSTITUENCY)));
                      userModel.setMobileno(c.getString(c.getColumnIndexOrThrow(KEY_MOBILE)));
@@ -198,7 +198,7 @@ public class SqlDatabase extends SQLiteOpenHelper {
 //    }
     //new
     public void updateUser(int id, String surename, String firstname, String gender, String datebirth,
-                           String username, String email, String country, String constituency,
+                           String username, String email, String password, String country, String constituency,
                            String mobile) {
         SQLiteDatabase db = this.getWritableDatabase();
         // Creating content values
@@ -209,6 +209,7 @@ public class SqlDatabase extends SQLiteOpenHelper {
         values.put(KEY_DATEBIRTH, datebirth);
         values.put(KEY_USERNAME, username);
         values.put(KEY_EMAIL, email);
+        values.put(KEY_PASSWORD, email);
         values.put(KEY_COUNTRY, country);
         values.put(KEY_CONSTITUENCY, constituency);
         values.put(KEY_MOBILE, mobile);

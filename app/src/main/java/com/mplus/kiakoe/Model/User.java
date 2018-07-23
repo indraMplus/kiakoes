@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class User implements Serializable {
 
     private int id;
-    private String surname,firstname,gender,datebirth,username,email,country,constituency,mobileno;
+    private String surname,firstname,gender,datebirth,username,email,password,country,constituency,mobileno;
 
     public User() {}
 
@@ -63,6 +63,13 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getCountry() {

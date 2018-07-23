@@ -10,36 +10,54 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="503dp"
+        android:layout_height="546dp"
         android:layout_margin="12dp"
+        android:layout_marginBottom="8dp"
         android:background="@color/bgColor"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        tools:layout_editor_absoluteX="8dp">
+
+        <Button
+            android:id="@+id/btnSaveSql"
+            android:layout_width="105dp"
+            android:layout_height="35dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/custom_button"
+            android:fontFamily="@font/source_sans_pro_bold"
+            android:text="Register"
+            android:textAllCaps="false"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/textView18"
+            android:layout_toEndOf="@+id/textView18"
+            android:text="*"
+            android:textColor="@color/star"
+            android:textSize="12sp" />
 
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="18dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="29dp"
             app:srcCompat="@drawable/kiakoelogos" />
 
         <TextView
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/imageView4"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="58dp"
-            android:layout_marginStart="58dp"
+            android:layout_alignStart="@+id/textView19"
+            android:layout_alignTop="@+id/imageView4"
+            android:fontFamily="@font/source_sans_pro"
             android:text="Your Location"
-            android:textColor="@color/txtColor"
+            android:textColor="@color/rounded"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -51,8 +69,9 @@
             android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/imageView4"
             android:layout_marginTop="86dp"
+            android:fontFamily="@font/source_sans_pro"
             android:text="Country"
-            android:textColor="@color/txtColor"
+            android:textColor="@color/rounded"
             android:textStyle="bold" />
 
         <TextView
@@ -61,19 +80,21 @@
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/imageView4"
             android:layout_alignTop="@+id/etMobileNo"
-            android:text="Mobile No *"
-            android:textColor="@color/txtColor"
+            android:fontFamily="@font/source_sans_pro"
+            android:text="Mobile No"
+            android:textColor="@color/rounded"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etMobileNo"
-            android:layout_width="202dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+            style="@style/field_style"
+            android:layout_width="213dp"
+            android:layout_height="20dp"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="175dp"
-            android:background="@drawable/border"
+            android:layout_alignStart="@+id/spLocation"
+            android:layout_marginTop="174dp"
             android:ems="10"
+            android:fontFamily="@font/source_sans_pro"
             android:hint="@string/hint_mobile"
             android:inputType="phone"
             android:textColor="@color/text"
@@ -83,8 +104,8 @@
         <Spinner
             android:id="@+id/spLocation"
             style="@style/spinner_style"
-            android:layout_alignLeft="@+id/etMobileNo"
-            android:layout_alignStart="@+id/etMobileNo"
+            android:layout_width="212dp"
+            android:layout_alignEnd="@+id/textView21"
             android:layout_alignTop="@+id/textView16"
             android:entries="@array/array_country"
             android:popupBackground="#a29f9f" />
@@ -92,7 +113,8 @@
         <Spinner
             android:id="@+id/spCons"
             style="@style/spinner_style"
-            android:layout_alignStart="@+id/etMobileNo"
+            android:layout_width="213dp"
+            android:layout_alignStart="@+id/spLocation"
             android:layout_alignTop="@+id/textView22"
             android:entries="@array/array_constituency"
             android:popupBackground="#a29f9f" />
@@ -101,10 +123,7 @@
             android:id="@+id/imageView5"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:layout_alignLeft="@+id/textView21"
-            android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/textView21"
-            android:layout_marginTop="240dp"
+            android:layout_centerVertical="true"
             android:background="@drawable/kiakoelogos" />
 
         <TextView
@@ -114,8 +133,9 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="42dp"
+            android:fontFamily="@font/source_sans_pro"
             android:text="Confirmations"
-            android:textColor="@color/txtColor"
+            android:textColor="@color/rounded"
             android:textStyle="bold" />
 
         <TextView
@@ -123,19 +143,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/textView21"
+            android:fontFamily="@font/source_sans_pro"
             android:text="Confirm"
-            android:textColor="@color/txtColor"
+            android:textColor="@color/rounded"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView21"
             android:layout_width="340dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="159dp"
+            android:layout_above="@+id/imgView"
+            android:fontFamily="@font/source_sans_pro"
             android:text="@string/confirms"
-            android:textColor="@color/txtColor"
-            android:textSize="12sp" />
+            android:textColor="@color/rounded"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/textView22"
@@ -145,8 +166,9 @@
             android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/imageView4"
             android:layout_marginTop="129dp"
+            android:fontFamily="@font/source_sans_pro"
             android:text="Constituency"
-            android:textColor="@color/txtColor"
+            android:textColor="@color/rounded"
             android:textStyle="bold" />
 
         <ImageView
@@ -165,7 +187,7 @@
             android:id="@+id/textView23"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_alignBottom="@+id/imgView"
             android:layout_centerHorizontal="true"
             android:text="3 / 3"
             android:textColor="@color/text"
@@ -173,27 +195,5 @@
 
 
     </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="511dp"
-        tools:ignore="MissingConstraints">
-
-        <Button
-            android:id="@+id/btnSaveSql"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/txtColor"
-            android:text="Register" />
-    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -24,7 +24,7 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
 
     //inisial update
     private User userModel;
-    private EditText etsure, etuser,etemail,etphone,etfirst,etDatebirth;
+    private EditText etsure, etuser,etemail,etphone,etfirst,etDatebirth,etPass;
     private Spinner spGend,spConst,spCon;
     Button btnupdate;
     ImageButton  btndelete;
@@ -44,6 +44,7 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
         etsure = (EditText) findViewById(R.id.editTextSurename);
         etuser = (EditText) findViewById(R.id.editTextUsername);
         etemail = (EditText) findViewById(R.id.editTextEmail);
+        etPass = (EditText)findViewById(R.id.editTextPassword);
         etphone = (EditText) findViewById(R.id.editTextPhone);
         etfirst = (EditText) findViewById(R.id.editTextFirstname);
         etDatebirth = (EditText) findViewById(R.id.editTextBirth);
@@ -68,6 +69,7 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
         etsure.setText(userModel.getSurname());
         etuser.setText(userModel.getUsername());
         etfirst.setText(userModel.getFirstname());
+        etPass.setText(userModel.getPassword());
         etemail.setText(userModel.getEmail());
         etphone.setText(userModel.getMobileno());
         etDatebirth.setText(userModel.getDatebirth());
@@ -78,7 +80,7 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
             public void onClick(View v) {
                 databaseHelper.updateUser(userModel.getId(),etsure.getText().toString(),etphone.getText().toString()
                         ,etuser.getText().toString()
-                        ,etemail.getText().toString(),etphone.getText().toString()
+                        ,etemail.getText().toString(),etPass.getText().toString(),etphone.getText().toString()
                         ,spGend.getSelectedItem().toString(),etDatebirth.getText().toString()
                         ,spCon.getSelectedItem().toString(),spConst.getSelectedItem().toString());
                 Toast.makeText(UpdateActivity.this, "Updated Successfully!", Toast.LENGTH_SHORT).show();

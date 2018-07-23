@@ -12,7 +12,7 @@
     app:layout_constraintTop_toTopOf="parent">
 
     <RelativeLayout
-        android:layout_width="280dp"
+        android:layout_width="256dp"
         android:layout_height="242dp"
         android:orientation="vertical">
 
@@ -242,6 +242,15 @@
             android:hint="Const"
             android:textColor="@color/text"
             android:textColorHint="@color/bgColor" />
+
+        <TextView
+            android:id="@+id/textViewPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/text1"
+            android:layout_alignTop="@+id/text4"
+            android:text="TextView"
+            android:visibility="invisible" />
 
     </RelativeLayout>
 

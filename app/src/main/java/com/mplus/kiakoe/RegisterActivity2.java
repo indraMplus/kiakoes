@@ -59,7 +59,7 @@ public class RegisterActivity2 extends AppCompatActivity {
 
         userName = (EditText)findViewById(R.id.etUsername);
         email   = (EditText)findViewById(R.id.etEmail);
-        emailConfirm = (EditText)findViewById(R.id.etConfirmEmail);
+        //emailConfirm = (EditText)findViewById(R.id.etConfirmEmail);
         password =(EditText)findViewById(R.id.etPassword);
         passwordConfirm = (EditText)findViewById(R.id.etConfirmPassword);
         passwordHint = (EditText)findViewById(R.id.etHintPass);
@@ -118,21 +118,21 @@ public class RegisterActivity2 extends AppCompatActivity {
 
         userName =(EditText) findViewById(R.id.etUsername);
         email = (EditText)findViewById(R.id.etEmail);
-        emailConfirm = (EditText)findViewById(R.id.etConfirmEmail);
+        //emailConfirm = (EditText)findViewById(R.id.etConfirmEmail);
         password =(EditText) findViewById(R.id.etPassword);
         passwordConfirm= (EditText)findViewById(R.id.etConfirmPassword);
         passwordHint = (EditText)findViewById(R.id.etHintPass);
 
         String ur = userName.getText().toString();
         String em = email.getText().toString().trim();
-        String ec = emailConfirm.getText().toString().trim();
+        //String ec = emailConfirm.getText().toString().trim();
         String ps = password.getText().toString().trim();
         String pc = passwordConfirm.getText().toString().trim();
         String ph = passwordHint.getText().toString().trim();
 
         outState.putString(USERNAME, ur);
         outState.putString(EMAIL, em);
-        outState.putString(EMAIL_CONFIRM, ec);
+        //outState.putString(EMAIL_CONFIRM, ec);
         outState.putString(PASSWORD,ps);
         outState.putString(PASSWORD_CONFIRM, pc);
         outState.putString(PASSWORD_HINT, ph);
@@ -150,7 +150,7 @@ public class RegisterActivity2 extends AppCompatActivity {
         Intent bundle = new Intent(RegisterActivity2.this,RegisterDone.class);
         bundle.putExtra(USERNAME,uname);
         bundle.putExtra(EMAIL,emm);
-        bundle.putExtra(EMAIL_CONFIRM,ecc);
+        //bundle.putExtra(EMAIL_CONFIRM,ecc);
         bundle.putExtra(PASSWORD,pas);
         bundle.putExtra(PASSWORD_CONFIRM,pac);
         bundle.putExtra(PASSWORD_HINT,pah);

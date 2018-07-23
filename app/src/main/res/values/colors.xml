@@ -10,5 +10,7 @@
     <color name="txtColor">#95d20f</color>
     <color name="formColor">#a0e607</color>
     <color name="text">#070707</color>
-    <color name="textcolors">#4f4d4d</color>
+    <color name="textcolors">#5b6563</color>
+    <color name="rounded">#5b6563</color>
+    <color name="star">#6cc916</color>
 </resources>

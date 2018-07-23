@@ -76,6 +76,7 @@ public class CustomAdapter extends BaseAdapter {
                 holder.datebirth = (TextView) convertView.findViewById(R.id.textViewDateBirth);
                 holder.username = (TextView) convertView.findViewById(R.id.textViewUsername);
                 holder.email = (TextView) convertView.findViewById(R.id.textViewEmail);
+                holder.password = (TextView) convertView.findViewById(R.id.textViewPassword);
                 holder.country = (TextView) convertView.findViewById(R.id.textViewCountry);
                 holder.constituency = (TextView) convertView.findViewById(R.id.txtCons);
                 holder.mobile = (TextView) convertView.findViewById(R.id.textViewMobileNo);
@@ -123,6 +124,7 @@ public class CustomAdapter extends BaseAdapter {
             holder.datebirth.setText(userModelArrayList.get(position).getDatebirth());
             holder.username.setText(userModelArrayList.get(position).getUsername());
             holder.email.setText(userModelArrayList.get(position).getEmail());
+            holder.password.setText(userModelArrayList.get(position).getPassword());
             holder.country.setText(userModelArrayList.get(position).getCountry());
             holder.constituency.setText(userModelArrayList.get(position).getConstituency());
             holder.mobile.setText(userModelArrayList.get(position).getMobileno());
@@ -131,7 +133,7 @@ public class CustomAdapter extends BaseAdapter {
     }
 
     private class ViewHolder {
-        TextView surname,firstname,gender,datebirth,username,email,country,constituency,mobile;
+        TextView surname,firstname,gender,datebirth,username,email,password,country,constituency,mobile;
         ImageButton edituser,deleteuser;
     }
 }
