@@ -3,116 +3,268 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="12dp"
     android:orientation="horizontal"
-    android:padding="8dp">
+    android:padding="8dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
 
     <RelativeLayout
-        android:layout_width="230dp"
-        android:layout_height="wrap_content"
+        android:layout_width="280dp"
+        android:layout_height="242dp"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textViewSureName"
-            android:layout_width="154dp"
+            android:id="@+id/textID"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textViewCountry"
+            android:layout_alignLeft="@+id/textViewDateBirth"
+            android:layout_alignStart="@+id/textViewDateBirth"
+            android:text="contituency"
+            android:textColor="@color/textcolors"
+            android:textSize="10sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/text5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textViewDateBirth"
+            android:layout_alignLeft="@+id/textViewDateBirth"
+            android:layout_alignStart="@+id/textViewDateBirth"
+            android:text="date of birth"
+            android:textColor="@color/textcolors"
+            android:textSize="10sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/text13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textViewUsername"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="76dp"
+            android:text="username"
+            android:textColor="@color/textcolors"
+            android:textSize="10sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/text8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textViewGender"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="gender"
+            android:textColor="@color/textcolors"
+            android:textSize="10sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/text9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textViewFirstName"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="firstname"
+            android:textColor="@color/textcolors"
+            android:textSize="10sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/text7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textViewDateBirth"
+            android:text="mobile no"
+            android:textColor="@color/textcolors"
+            android:textSize="10sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/text6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textViewCountry"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="country"
+            android:textColor="@color/textcolors"
+            android:textSize="10sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textViewEmail"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="email"
+            android:textColor="@color/textcolors"
+            android:textSize="10sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="surname"
+            android:textColor="@color/textcolors"
+            android:textSize="10sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/textViewSureName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/text3"
             android:hint="Surename"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textColor="#f90b0b"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textViewFirstName"
             android:layout_width="154dp"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/textViewSureName"
-            android:layout_below="@+id/textViewSureName"
+            android:layout_above="@+id/text8"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:hint="Firstname"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/text"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/textViewGender"
             android:layout_width="154dp"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/textViewSureName"
-            android:layout_below="@+id/textViewFirstName"
+            android:layout_above="@+id/text5"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="0dp"
             android:hint="Gender"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/text"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/textViewDateBirth"
             android:layout_width="102dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_below="@+id/textViewGender"
-            android:hint="Date Birth" />
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:hint="Date Birth"
+            android:textColor="@color/text" />
 
         <TextView
             android:id="@+id/textViewUsername"
             android:layout_width="127dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/textViewGender"
+            android:layout_centerVertical="true"
             android:hint="username"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/textViewEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textViewUsername"
-            android:hint="email"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
-
-        <TextView
-            android:id="@+id/textViewCountry"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textViewEmail"
-            android:hint="country"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="14sp"
+            android:textStyle="italic" />
 
         <TextView
             android:id="@+id/textViewMobileNo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/text1"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/textViewCountry"
+            android:hint="email"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/text" />
+
+        <TextView
+            android:id="@+id/textViewCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/text4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:hint="country"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textColor="@color/text"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textViewEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:hint="mobile no"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/text" />
 
         <ImageView
-            android:id="@+id/imageView8"
+            android:id="@+id/imgUser"
             android:layout_width="wrap_content"
             android:layout_height="80dp"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:visibility="gone"
             app:srcCompat="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/txtCons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textViewDateBirth"
+            android:layout_alignStart="@+id/textViewDateBirth"
+            android:layout_alignTop="@+id/textViewCountry"
+            android:hint="Const"
+            android:textColor="@color/text"
+            android:textColorHint="@color/bgColor" />
 
     </RelativeLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
+        android:layout_marginRight="6dp"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/buttonEditEmployee"
-            android:layout_width="match_parent"
+        <ImageButton
+            android:id="@+id/buttonEditUser"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/edit"
             android:text="Edit" />
 
-        <Button
-            android:id="@+id/buttonDeleteEmployee"
-            android:layout_width="match_parent"
+        <ImageButton
+            android:id="@+id/buttonDeleteUser"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@color/colorAccent"
+            android:background="@drawable/delete"
             android:text="Delete" />
 
     </LinearLayout>

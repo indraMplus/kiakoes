@@ -20,11 +20,12 @@
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
-        android:layout_width="368dp"
-        android:layout_height="557dp"
+        android:layout_width="match_parent"
+        android:layout_height="507dp"
+        android:layout_margin="12dp"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="10dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="5dp">
 
         <ImageView
             android:id="@+id/imageView3"
@@ -95,38 +96,24 @@
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/imageView3"
             android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/imageView3"
-            android:layout_marginTop="228dp"
+            android:layout_marginTop="213dp"
             android:text="Password *"
             android:textColor="@color/txtColor"
             android:textSize="12sp"
             android:textStyle="bold" />
 
-        <RadioButton
-            android:id="@+id/radioButton"
-            style="@android:style/Widget.Material.CompoundButton.RadioButton"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/etUsername"
-            android:layout_marginTop="197dp"
-            android:background="@drawable/border"
-            android:text="RadioButton" />
-
         <TextView
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignTop="@+id/radioButton"
-            android:layout_marginEnd="103dp"
-            android:layout_marginRight="103dp"
+            android:layout_alignTop="@+id/cbPass"
+            android:layout_toEndOf="@+id/textView17"
             android:text="Show Password"
             android:textColor="@color/txtColor"
-            android:textSize="12sp" />
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView14"
@@ -144,10 +131,9 @@
             android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/imageView3"
             android:layout_alignParentBottom="true"
             android:layout_alignStart="@+id/imageView3"
-            android:layout_marginBottom="229dp"
+            android:layout_marginBottom="215dp"
             android:text="Password hint"
             android:textColor="@color/txtColor"
             android:textSize="12sp"
@@ -160,28 +146,26 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:text="2 / 3"
-            android:textColor="@color/txColor" />
+            android:textColor="@color/text"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etUsername"
-            android:layout_width="180dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
+            android:layout_alignStart="@+id/textView17"
             android:layout_alignTop="@+id/txtUserName"
-            android:layout_marginEnd="38dp"
-            android:layout_marginRight="38dp"
             android:background="@drawable/border"
             android:ems="10"
             android:hint="@string/hint_user"
             android:inputType="textPersonName"
-            android:textColor="@color/txColor"
+            android:textColor="@color/text"
             android:textColorHint="@color/txColor"
             android:textSize="12sp" />
 
         <EditText
             android:id="@+id/etEmail"
-            android:layout_width="180dp"
+            android:layout_width="match_parent"
             android:layout_height="18dp"
             android:layout_alignLeft="@+id/etUsername"
             android:layout_alignStart="@+id/etUsername"
@@ -190,13 +174,13 @@
             android:ems="10"
             android:hint="@string/hint_email"
             android:inputType="textEmailAddress"
-            android:textColor="@color/txColor"
+            android:textColor="@color/text"
             android:textColorHint="@color/txColor"
             android:textSize="12sp" />
 
         <EditText
             android:id="@+id/etConfirmEmail"
-            android:layout_width="212dp"
+            android:layout_width="match_parent"
             android:layout_height="16dp"
             android:layout_alignLeft="@+id/etUsername"
             android:layout_alignStart="@+id/etUsername"
@@ -205,47 +189,60 @@
             android:ems="10"
             android:hint="@string/hint_email_confirm"
             android:inputType="textEmailAddress"
-            android:textColor="@color/txColor"
+            android:textColor="@color/text"
             android:textColorHint="@color/txColor"
             android:textSize="12sp" />
 
         <EditText
             android:id="@+id/etPassword"
-            android:layout_width="212dp"
+            android:layout_width="match_parent"
             android:layout_height="16dp"
+            android:layout_alignLeft="@+id/etUsername"
             android:layout_alignStart="@+id/etUsername"
             android:layout_alignTop="@+id/textView12"
             android:background="@drawable/border"
             android:ems="10"
             android:inputType="textPassword"
-            android:textColor="@color/txColor"
+            android:textColor="@color/text"
             android:textSize="12sp" />
 
         <EditText
             android:id="@+id/etConfirmPassword"
-            android:layout_width="213dp"
+            android:layout_width="match_parent"
             android:layout_height="17dp"
+            android:layout_alignLeft="@+id/etUsername"
             android:layout_alignStart="@+id/etUsername"
             android:layout_centerVertical="true"
             android:background="@drawable/border"
             android:ems="10"
             android:inputType="textPassword"
-            android:textColor="@color/txColor"
+            android:textColor="@color/text"
             android:textSize="12sp" />
 
         <EditText
             android:id="@+id/etHintPass"
-            android:layout_width="213dp"
+            android:layout_width="match_parent"
             android:layout_height="16dp"
+            android:layout_alignLeft="@+id/etUsername"
             android:layout_alignStart="@+id/etUsername"
             android:layout_alignTop="@+id/textView15"
             android:background="@drawable/border"
             android:ems="10"
             android:hint="@string/hint_pass_confirm"
             android:inputType="textPersonName"
-            android:textColor="@color/txColor"
+            android:textColor="@color/text"
             android:textColorHint="@color/txColor"
             android:textSize="12sp" />
+
+        <CheckBox
+            android:id="@+id/cbPass"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="185dp"
+            android:background="@drawable/border"
+            android:text="CheckBox" />
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

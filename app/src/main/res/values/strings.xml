@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">kiakoe</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">KIAKOE</string>
     <string name="title_prev">Previous</string>
     <string name="title_next">Next</string>
     <string name="title_new_user">New User</string>
@@ -28,6 +28,26 @@
     <string-array name="array_country">
         <item>Vanuatu</item>
         <item>Ireland</item>
+    </string-array>
+    <string-array name="array_constituency">
+        <item>Santo</item>
+        <item>Malekula</item>
+        <item>Tanna</item>
+        <item>Port Vila</item>
+        <item>Efate</item>
+        <item>Pentecost</item>
+        <item>Ambae</item>
+        <item>Epi</item>
+        <item>Luganville</item>
+        <item>Ambrym</item>
+        <item>Maewo</item>
+        <item>Torres</item>
+        <item>Banks</item>
+        <item>Shepherds</item>
+        <item>Malo/Aore</item>
+        <item>Tongoa</item>
+        <item>Paama</item>
+        <item>Southern Islands</item>
     </string-array>
     <!-- String Array gender-->
     <string-array name="array_gen">

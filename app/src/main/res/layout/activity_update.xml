@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:text="Edit User"
+        android:textAlignment="center"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+        android:textColor="@color/text" />
+
+    <EditText
+        android:id="@+id/editTextSurename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/border"
+        android:hint="Enter Surename"
+        android:textColor="@color/text"
+        android:textColorHint="@color/txColor"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/editTextFirstname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/border"
+        android:hint="Enter Firstname"
+        android:textColor="@color/text"
+        android:textColorHint="@color/txColor"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/border"
+        android:hint="Enter User Name"
+        android:textColor="@color/text"
+        android:textColorHint="@color/txColor"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/border"
+        android:hint="Enter Email"
+        android:textColor="@color/text"
+        android:textColorHint="@color/txColor"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/border"
+        android:paddingLeft="6dp"
+        android:text="Select Gender"
+        android:textColor="@color/text" />
+
+    <Spinner
+        android:id="@+id/spinnerGender"
+        style="@style/spinner_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/array_gen"
+        android:popupBackground="@color/txColor" />
+
+    <EditText
+        android:id="@+id/editTextBirth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/border"
+        android:hint="Enter Date of Birth"
+        android:textColor="@color/text"
+        android:textColorHint="@color/txColor"
+        android:textSize="16sp" />
+
+    <!--<EditText-->
+        <!--android:id="@+id/editTextPassword"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:background="@drawable/border"-->
+        <!--android:hint="Enter Password"-->
+        <!--android:textColor="@color/text"-->
+        <!--android:textColorHint="@color/txColor"-->
+        <!--android:textSize="16sp" />-->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/border"
+        android:paddingLeft="6dp"
+        android:text="Select Country"
+        android:textColor="@color/text" />
+
+    <Spinner
+        android:id="@+id/spinnerCountry"
+        style="@style/spinner_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/array_country"
+        android:popupBackground="@color/txColor" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/border"
+        android:paddingLeft="6dp"
+        android:text="Select Constituency"
+        android:textColor="@color/text" />
+
+    <Spinner
+        android:id="@+id/spinnerConstituency"
+        style="@style/spinner_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/array_constituency"
+        android:popupBackground="@color/txColor" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/border"
+        android:digits="0123456789"
+        android:hint="Enter Phone Number"
+        android:inputType="number"
+        android:textColor="@color/text"
+        android:textColorHint="@color/txColor"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/buttonUpdateUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/formColor"
+        android:text="Update"
+        android:textColor="@color/text" />
+
+</LinearLayout>

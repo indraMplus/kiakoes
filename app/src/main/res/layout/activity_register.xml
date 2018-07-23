@@ -19,15 +19,16 @@
         app:menu="@menu/menu_bottom_reg" />
 
     <RelativeLayout
-        android:layout_width="368dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_margin="6dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toTopOf="@+id/navigationReg"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="8dp">
+        app:layout_constraintVertical_bias="0.888"
+        tools:layout_editor_absoluteX="6dp"
+        tools:ignore="MissingConstraints">
 
         <ImageView
             android:id="@+id/imageView"
@@ -39,6 +40,7 @@
             android:layout_marginLeft="28dp"
             android:layout_marginStart="28dp"
             android:layout_marginTop="25dp"
+            android:background="@drawable/kiakoelogos"
             android:scaleType="fitXY"
             app:srcCompat="@drawable/kiakoelogos" />
 
@@ -105,43 +107,39 @@
 
         <EditText
             android:id="@+id/etSureName"
-            android:layout_width="194dp"
+            android:layout_width="205dp"
             android:layout_height="19dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignTop="@+id/textView2"
-            android:layout_marginEnd="15dp"
-            android:layout_marginRight="15dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
             android:background="@drawable/border"
             android:ems="10"
             android:hint="@string/hint_surname"
             android:inputType="textPersonName"
-            android:textColor="@color/txColor"
+            android:textColor="@color/text"
             android:textColorHint="@color/txColor"
             android:textColorLink="@color/txColor"
             android:textSize="12sp" />
 
         <EditText
             android:id="@+id/etFirstName"
-            android:layout_width="204dp"
+            android:layout_width="match_parent"
             android:layout_height="19dp"
-            android:layout_alignEnd="@+id/etSureName"
-            android:layout_alignRight="@+id/etSureName"
+            android:layout_alignStart="@+id/etSureName"
             android:layout_alignTop="@+id/textView3"
-            android:layout_marginEnd="-11dp"
-            android:layout_marginRight="-11dp"
             android:background="@drawable/border"
             android:ems="10"
             android:hint="@string/hint_firstname"
             android:inputType="textPersonName"
-            android:textColor="@color/txColor"
+            android:textColor="@color/text"
             android:textColorHint="@color/txColor"
             android:textSize="12sp" />
 
         <Spinner
             android:id="@+id/spGender"
             style="@style/spinner_style"
-            android:layout_width="204dp"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/etSureName"
             android:layout_alignStart="@+id/etSureName"
@@ -151,7 +149,7 @@
 
         <EditText
             android:id="@+id/etDateBirth"
-            android:layout_width="194dp"
+            android:layout_width="match_parent"
             android:layout_height="21dp"
             android:layout_alignLeft="@+id/etSureName"
             android:layout_alignStart="@+id/etSureName"
@@ -160,7 +158,7 @@
             android:ems="10"
             android:hint="@string/hint_date"
             android:inputType="textPersonName"
-            android:textColor="@color/txColor"
+            android:textColor="@color/text"
             android:textColorHint="@color/txColor"
             android:textSize="12sp" />
 
@@ -168,22 +166,30 @@
             android:id="@+id/imgNewUser"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:layout_alignParentBottom="true"
+            android:layout_above="@+id/textView6"
             android:layout_alignStart="@+id/etSureName"
-            android:layout_marginBottom="152dp"
+            android:layout_marginBottom="6dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:background="@drawable/border"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/takepic" />
+            app:srcCompat="@drawable/takepic"
+            android:contentDescription="TODO" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_alignStart="@+id/etSureName"
-            android:layout_marginBottom="123dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="100dp"
+            android:layout_marginEnd="116dp"
             android:text="Take Picture"
-            android:textColor="@color/txColor" />
+
+            android:textColor="@color/text" />
 
         <TextView
             android:id="@+id/textView8"
@@ -192,7 +198,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:text="1 / 3"
-            android:textColor="@color/txColor"
+            android:textColor="@color/text"
             android:textStyle="bold" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
