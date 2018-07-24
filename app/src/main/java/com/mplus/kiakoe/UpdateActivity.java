@@ -24,7 +24,13 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
 
     //inisial update
     private User userModel;
-    private EditText etsure, etuser,etemail,etphone,etfirst,etDatebirth,etPass;
+    private EditText etsure;
+    private EditText etuser;
+    private EditText etemail;
+    private EditText etphone;
+    private EditText etDatebirth;
+    private EditText etPass;
+    private EditText etfirst;
     private Spinner spGend,spConst,spCon;
     Button btnupdate;
     ImageButton  btndelete;
@@ -44,7 +50,7 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
         etsure = (EditText) findViewById(R.id.editTextSurename);
         etuser = (EditText) findViewById(R.id.editTextUsername);
         etemail = (EditText) findViewById(R.id.editTextEmail);
-        etPass = (EditText)findViewById(R.id.editTextPassword);
+        etPass = (EditText)findViewById(R.id.editTextpassword);
         etphone = (EditText) findViewById(R.id.editTextPhone);
         etfirst = (EditText) findViewById(R.id.editTextFirstname);
         etDatebirth = (EditText) findViewById(R.id.editTextBirth);
@@ -69,11 +75,10 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
         etsure.setText(userModel.getSurname());
         etuser.setText(userModel.getUsername());
         etfirst.setText(userModel.getFirstname());
-        etPass.setText(userModel.getPassword());
         etemail.setText(userModel.getEmail());
+        etPass.setText(userModel.getPassword());
         etphone.setText(userModel.getMobileno());
         etDatebirth.setText(userModel.getDatebirth());
-        //etpass.setText(userModel.getPass());
 
         btnupdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +91,7 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
                 Toast.makeText(UpdateActivity.this, "Updated Successfully!", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(UpdateActivity.this,ListUser.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
         });

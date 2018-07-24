@@ -24,6 +24,8 @@
         android:layout_margin="6dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="16dp"
+        android:overScrollMode="ifContentScrolls"
+        android:scrollbarStyle="insideOverlay"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
@@ -59,6 +61,7 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
@@ -68,7 +71,7 @@
             android:layout_alignStart="@+id/imageView"
             android:layout_marginTop="100dp"
             android:fontFamily="@font/source_sans_pro"
-            android:text="Surename "
+            android:text="Surname "
             android:textColor="@color/textcolors"
             android:textStyle="bold" />
 
@@ -163,9 +166,9 @@
             android:layout_alignStart="@+id/etSureName"
             android:layout_alignTop="@+id/textView5"
             android:ems="10"
+            android:focusableInTouchMode="false"
             android:fontFamily="@font/source_sans_pro"
             android:hint="@string/hint_date"
-            android:inputType="textPersonName"
             android:textColor="@color/text"
             android:textColorHint="@color/txColor"
             android:textSize="12sp" />
@@ -187,6 +190,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/takepic" />
 
+
         <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
@@ -204,7 +208,7 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/button"
+            android:layout_alignBaseline="@+id/btnNext"
             android:layout_centerHorizontal="true"
             android:text="1 / 3"
             android:textColor="@color/text"
@@ -251,11 +255,11 @@
             android:textSize="12sp" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnNext"
             android:layout_width="105dp"
             android:layout_height="35dp"
             android:layout_alignParentEnd="true"
-            android:layout_alignTop="@+id/button2"
+            android:layout_alignTop="@+id/btnPrev"
             android:layout_marginEnd="30dp"
             android:background="@drawable/custom_button"
             android:fontFamily="@font/source_sans_pro_bold"
@@ -264,7 +268,7 @@
             android:textSize="12sp" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnPrev"
             android:layout_width="105dp"
             android:layout_height="35dp"
             android:layout_alignParentBottom="true"
@@ -278,7 +282,7 @@
             android:textSize="12sp" />
 
         <TextView
-            android:id="@+id/textView25"
+            android:id="@+id/txtBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -288,5 +292,7 @@
             android:text="Cancel (back to home)"
             android:textColor="@color/textcolors" />
 
+
     </RelativeLayout>
+
 </android.support.constraint.ConstraintLayout>

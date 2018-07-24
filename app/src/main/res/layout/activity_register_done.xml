@@ -45,15 +45,17 @@
             android:id="@+id/imageView4"
             android:layout_width="32dp"
             android:layout_height="32dp"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="29dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="30dp"
             app:srcCompat="@drawable/kiakoelogos" />
 
         <TextView
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/textView19"
+            android:layout_alignEnd="@+id/textView23"
             android:layout_alignTop="@+id/imageView4"
             android:fontFamily="@font/source_sans_pro"
             android:text="Your Location"
@@ -65,10 +67,9 @@
             android:id="@+id/textView16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/imageView4"
             android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/imageView4"
-            android:layout_marginTop="86dp"
+            android:layout_marginTop="88dp"
             android:fontFamily="@font/source_sans_pro"
             android:text="Country"
             android:textColor="@color/rounded"
@@ -105,7 +106,7 @@
             android:id="@+id/spLocation"
             style="@style/spinner_style"
             android:layout_width="212dp"
-            android:layout_alignEnd="@+id/textView21"
+            android:layout_alignParentEnd="true"
             android:layout_alignTop="@+id/textView16"
             android:entries="@array/array_country"
             android:popupBackground="#a29f9f" />
@@ -114,58 +115,18 @@
             android:id="@+id/spCons"
             style="@style/spinner_style"
             android:layout_width="213dp"
-            android:layout_alignStart="@+id/spLocation"
+            android:layout_alignParentEnd="true"
             android:layout_alignTop="@+id/textView22"
             android:entries="@array/array_constituency"
             android:popupBackground="#a29f9f" />
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_centerVertical="true"
-            android:background="@drawable/kiakoelogos" />
-
-        <TextView
-            android:id="@+id/textView19"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="42dp"
-            android:fontFamily="@font/source_sans_pro"
-            android:text="Confirmations"
-            android:textColor="@color/rounded"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView20"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/textView21"
-            android:fontFamily="@font/source_sans_pro"
-            android:text="Confirm"
-            android:textColor="@color/rounded"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView21"
-            android:layout_width="340dp"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/imgView"
-            android:fontFamily="@font/source_sans_pro"
-            android:text="@string/confirms"
-            android:textColor="@color/rounded"
-            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/textView22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/imageView4"
             android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/imageView4"
-            android:layout_marginTop="129dp"
+            android:layout_marginTop="128dp"
             android:fontFamily="@font/source_sans_pro"
             android:text="Constituency"
             android:textColor="@color/rounded"

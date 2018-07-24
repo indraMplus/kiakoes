@@ -53,7 +53,6 @@ public class SqlDatabase extends SQLiteOpenHelper {
     private static final String KEY_DATEBIRTH = "datebirth";
     private static final String KEY_USERNAME = "username";
     private static final String KEY_EMAIL = "email";
-    //private static final String KEY_EMAILCONFIRM = "emailconfirm";
     private static final String KEY_PASSWORD = "password";
     private static final String KEY_PASSWORDCONFIRM = "passwordconfirm";
     private static final String KEY_PASWORDHINT = "passwordhint";
@@ -119,7 +118,6 @@ public class SqlDatabase extends SQLiteOpenHelper {
         values.put(KEY_DATEBIRTH, datebirth);
         values.put(KEY_USERNAME, username);
         values.put(KEY_EMAIL, email);
-        //values.put(KEY_EMAILCONFIRM, emailconfirm);
         values.put(KEY_PASSWORD, password);
         values.put(KEY_PASSWORDCONFIRM, passwordconfirm);
         values.put(KEY_PASWORDHINT, passwordhint);
@@ -162,13 +160,14 @@ public class SqlDatabase extends SQLiteOpenHelper {
 
     //new
     public ArrayList<User> getAllUsers() {
+        ArrayList<User> userModelArrayList = new ArrayList<User>();
+
+        String selectQuery = "SELECT  * FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getReadableDatabase();
-        String query = "SELECT  * FROM " + TABLE_NAME;
-        Cursor c = db.rawQuery(query,null);
-        ArrayList<User> userModelArrayList = new ArrayList<>();
+        Cursor c = db.rawQuery(selectQuery, null);
         // looping through all rows and adding to list
          if (c.moveToFirst()) {
-                 userModelArrayList.clear();
+                 //userModelArrayList.clear();
                  do {
                      User userModel = new User();
                      userModel.setId(c.getInt(c.getColumnIndex(KEY_ID)));
@@ -181,13 +180,12 @@ public class SqlDatabase extends SQLiteOpenHelper {
                      userModel.setPassword(c.getString(c.getColumnIndex(KEY_PASSWORD)));
                      userModel.setCountry(c.getString(c.getColumnIndex(KEY_COUNTRY)));
                      userModel.setConstituency(c.getString(c.getColumnIndex(KEY_CONSTITUENCY)));
-                     userModel.setMobileno(c.getString(c.getColumnIndexOrThrow(KEY_MOBILE)));
+                     userModel.setMobileno(c.getString(c.getColumnIndex(KEY_MOBILE)));
 
                      userModelArrayList.add(userModel);
                  } while (c.moveToNext());
                  c.close();
          }
-         db.close();
         return userModelArrayList;
     }
 
@@ -197,7 +195,7 @@ public class SqlDatabase extends SQLiteOpenHelper {
 //        return res;
 //    }
     //new
-    public void updateUser(int id, String surename, String firstname, String gender, String datebirth,
+    public int updateUser(int id, String surename, String firstname, String gender, String datebirth,
                            String username, String email, String password, String country, String constituency,
                            String mobile) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -209,12 +207,12 @@ public class SqlDatabase extends SQLiteOpenHelper {
         values.put(KEY_DATEBIRTH, datebirth);
         values.put(KEY_USERNAME, username);
         values.put(KEY_EMAIL, email);
-        values.put(KEY_PASSWORD, email);
+        values.put(KEY_PASSWORD, password);
         values.put(KEY_COUNTRY, country);
         values.put(KEY_CONSTITUENCY, constituency);
         values.put(KEY_MOBILE, mobile);
         // update row in students table base on students.is value
-        db.update(TABLE_NAME, values, KEY_ID + " = ?",
+        return db.update(TABLE_NAME, values, KEY_ID + " = ?",
                 new String[]{String.valueOf(id)});
     }
 
@@ -223,5 +221,10 @@ public class SqlDatabase extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_NAME, KEY_ID + " = ?",
                 new String[]{String.valueOf(id)});
+    }
+    public Cursor getUser(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM "+ TABLE_NAME + "",null);
+        return res;
     }
 }

@@ -30,6 +30,7 @@ import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -49,7 +50,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class RegisterActivity extends Activity implements View.OnClickListener{
+public class RegisterActivity extends AppCompatActivity{
 
     public final static String SURNAME = "surename";
     public final static String FIRSTNAME = "first";
@@ -64,32 +65,12 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
     EditText surename,firstname,datebirth;
     ImageView imageViewUser;
     SqlDatabase myDb;
-
-
-
+    Button prev,next;
+    TextView back;
     private int mYear, mMonth, mDay;
     private static int REQ_CODE = 155;
+    DatePickerDialog datePickerDialog;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_prev:
-
-                    Intent main = new Intent(getApplicationContext(),MainActivity.class);
-                    startActivity(main);
-
-                    return true;
-                case R.id.navigation_next:
-                    addUserTemp();
-
-                    return true;
-            }
-            return false;
-        }
-    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,9 +93,29 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
 //        String pac3 = intent.getStringExtra(RegisterDone.PASSWORD_CONFIRM);
 //        String pah3 = intent.getStringExtra(RegisterDone.PASSWORD_HINT);
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigationReg);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
+        back = (TextView)findViewById(R.id.txtBack);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent main = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(main);
+            }
+        });
+        prev = (Button)findViewById(R.id.btnPrev);
+        prev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent main = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(main);
+            }
+        });
+        next = (Button)findViewById(R.id.btnNext);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addUserTemp();
+            }
+        });
         surename = (EditText)findViewById(R.id.etSureName);
         firstname = (EditText)findViewById(R.id.etFirstName);
         datebirth = (EditText)findViewById(R.id.etDateBirth);
@@ -127,37 +128,35 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spGender.setAdapter(adapter);
 
-        datebirth.setOnClickListener(this);
+        datebirth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //get Curent Date
+                final Calendar cal = Calendar.getInstance();
+                mYear = cal.get(Calendar.YEAR);
+                mMonth = cal.get(Calendar.MONTH);
+                mDay = cal.get(Calendar.DAY_OF_MONTH);
+
+                datePickerDialog = new DatePickerDialog(RegisterActivity.this,
+                        new DatePickerDialog.OnDateSetListener() {
+
+                            @Override
+                            public void onDateSet(DatePicker view, int year,
+                                                  int monthOfYear, int dayOfMonth) {
+
+                                datebirth.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+
+                            }
+                        }, mYear, mMonth, mDay);
+                datePickerDialog.show();
+            }
+        });
         imageViewUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 selectImage();
             }
         });
-    }
-
-    @Override
-    public void onClick(View v){
-        if(v == datebirth){
-            //get Curent Date
-            final Calendar cal = Calendar.getInstance();
-                mYear = cal.get(Calendar.YEAR);
-                mMonth = cal.get(Calendar.MONTH);
-                mDay = cal.get(Calendar.DAY_OF_MONTH);
-
-            DatePickerDialog datePickerDialog = new DatePickerDialog(this,
-                    new DatePickerDialog.OnDateSetListener() {
-
-                        @Override
-                        public void onDateSet(DatePicker view, int year,
-                                              int monthOfYear, int dayOfMonth) {
-
-                            datebirth.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
-
-                        }
-                    }, mYear, mMonth, mDay);
-            datePickerDialog.show();
-        }
     }
     @Override
     protected void onSaveInstanceState(Bundle outState){
@@ -173,8 +172,8 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
 
         outState.putString(SURNAME, sr);
         outState.putString(FIRSTNAME, fn);
-        outState.putString(SURNAME, gd);
-        outState.putString(SURNAME, dt);
+        outState.putString(GENDER, gd);
+        outState.putString(DATEBIRTH, dt);
     }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {

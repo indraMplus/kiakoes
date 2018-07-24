@@ -14,6 +14,7 @@ import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -24,32 +25,13 @@ public class RegisterActivity2 extends AppCompatActivity {
 
     public final static String USERNAME = "username";
     public final static String EMAIL = "email";
-    public final static String EMAIL_CONFIRM = "email_confirm";
     public final static String PASSWORD = "password";
     public final static String PASSWORD_CONFIRM = "password_confirm";
     public final static String PASSWORD_HINT = "password_hint";
     //inisial
-    EditText userName,email,emailConfirm,password,passwordConfirm,passwordHint;
+    EditText userName,email,password,passwordConfirm,passwordHint;
     CheckBox cbp;
-
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_prev2:
-                    onBackPressed();
-
-                    return true;
-                case R.id.navigation_next2:
-                    addUserTemp2();
-                    return true;
-            }
-            return false;
-        }
-    };
+    Button prev2,next2;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -59,10 +41,23 @@ public class RegisterActivity2 extends AppCompatActivity {
 
         userName = (EditText)findViewById(R.id.etUsername);
         email   = (EditText)findViewById(R.id.etEmail);
-        //emailConfirm = (EditText)findViewById(R.id.etConfirmEmail);
         password =(EditText)findViewById(R.id.etPassword);
         passwordConfirm = (EditText)findViewById(R.id.etConfirmPassword);
         passwordHint = (EditText)findViewById(R.id.etHintPass);
+        prev2 = (Button)findViewById(R.id.btnPrev2);
+        prev2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+        next2 = (Button)findViewById(R.id.btnNext2);
+        next2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addUserTemp2();
+            }
+        });
 
         //email
 
@@ -95,7 +90,6 @@ public class RegisterActivity2 extends AppCompatActivity {
                 }
             }
         });
-
 //        Intent intent = getIntent();
 //        String sr1 = intent.getStringExtra(RegisterActivity.SURNAME);
 //        String fn1 = intent.getStringExtra(RegisterActivity.FIRSTNAME);
@@ -106,8 +100,7 @@ public class RegisterActivity2 extends AppCompatActivity {
 //        String lo3 = intent.getStringExtra(RegisterDone.LOCATION);
 //        String mo3 = intent.getStringExtra(RegisterDone.MOBILENO);
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigationReg2);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
     }
 //    public void goBack(){
 //        onBackPressed();
@@ -118,21 +111,18 @@ public class RegisterActivity2 extends AppCompatActivity {
 
         userName =(EditText) findViewById(R.id.etUsername);
         email = (EditText)findViewById(R.id.etEmail);
-        //emailConfirm = (EditText)findViewById(R.id.etConfirmEmail);
         password =(EditText) findViewById(R.id.etPassword);
-        passwordConfirm= (EditText)findViewById(R.id.etConfirmPassword);
+        passwordConfirm = (EditText)findViewById(R.id.etConfirmPassword);
         passwordHint = (EditText)findViewById(R.id.etHintPass);
 
         String ur = userName.getText().toString();
         String em = email.getText().toString().trim();
-        //String ec = emailConfirm.getText().toString().trim();
         String ps = password.getText().toString().trim();
         String pc = passwordConfirm.getText().toString().trim();
         String ph = passwordHint.getText().toString().trim();
 
         outState.putString(USERNAME, ur);
         outState.putString(EMAIL, em);
-        //outState.putString(EMAIL_CONFIRM, ec);
         outState.putString(PASSWORD,ps);
         outState.putString(PASSWORD_CONFIRM, pc);
         outState.putString(PASSWORD_HINT, ph);
@@ -140,17 +130,15 @@ public class RegisterActivity2 extends AppCompatActivity {
     private void addUserTemp2(){
 
         String uname = userName.getText().toString().trim();
-        String emm = email.getText().toString().trim();
-        String ecc  = emailConfirm.getText().toString().trim();
-        String pas = password.getText().toString().trim();
+        String em = email.getText().toString().trim();
+        String pas =  password.getText().toString().trim();
         String pac  = passwordConfirm.getText().toString().trim();
         String pah = passwordHint.getText().toString().trim();
 
 
         Intent bundle = new Intent(RegisterActivity2.this,RegisterDone.class);
         bundle.putExtra(USERNAME,uname);
-        bundle.putExtra(EMAIL,emm);
-        //bundle.putExtra(EMAIL_CONFIRM,ecc);
+        bundle.putExtra(EMAIL,em);
         bundle.putExtra(PASSWORD,pas);
         bundle.putExtra(PASSWORD_CONFIRM,pac);
         bundle.putExtra(PASSWORD_HINT,pah);

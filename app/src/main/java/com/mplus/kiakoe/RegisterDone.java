@@ -37,11 +37,9 @@ public class RegisterDone extends AppCompatActivity {
     public final static String MOBILENO = "mobileno";
     public static String IMAGES = "imageuser";
     private SqlDatabase databaseHelper;
-
     Spinner spDone,spCons;
     EditText mobile;
     Button saveSql;
-    SqlDatabase myDb;
     ImageView imgUserReg;
 
     @Override
@@ -81,7 +79,6 @@ public class RegisterDone extends AppCompatActivity {
         //data from register 2
         final String usr2 = intent.getStringExtra(RegisterActivity2.USERNAME);
         final String em2 = intent.getStringExtra(RegisterActivity2.EMAIL);
-        //final String emc2 = intent.getStringExtra(RegisterActivity2.EMAIL_CONFIRM);
         final String pa2 = intent.getStringExtra(RegisterActivity2.PASSWORD);
         final String pac2 = intent.getStringExtra(RegisterActivity2.PASSWORD_CONFIRM);
         final String pah2 = intent.getStringExtra(RegisterActivity2.PASSWORD_HINT);
