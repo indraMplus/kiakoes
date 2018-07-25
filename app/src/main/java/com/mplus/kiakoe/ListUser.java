@@ -18,7 +18,10 @@ import com.mplus.kiakoe.database.SqlDatabase;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 public class ListUser extends AppCompatActivity {
 
@@ -53,6 +56,8 @@ public class ListUser extends AppCompatActivity {
             //new test
             SQLiteDatabase sqldb = databaseHelper.getReadableDatabase();
             Cursor c = null;
+            //param date
+            String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
             @Override
             public void onClick(final View v) {
                 //parameter for make file path
@@ -61,7 +66,7 @@ public class ListUser extends AppCompatActivity {
                     int rowcount = 0;
                     int colcount = 0;
                     File sdCardDir = new File(Environment.getExternalStorageDirectory().getPath() + "/Backup/");
-                    String filename = "kiakoe_userslist.csv";
+                    String filename = date +"_kiakoe.csv";
 
                     if (!sdCardDir.exists()) {
                     sdCardDir.mkdirs();
