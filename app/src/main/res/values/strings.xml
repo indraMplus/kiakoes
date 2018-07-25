@@ -17,7 +17,7 @@
     <string name="hint_email_confirm">Confirm Email</string>
     <string name="hint_pass_confirm">Hint for remembering your password</string>
 
-    <string name="hint_surname">Enter your Surename</string>
+    <string name="hint_surname">Enter your Surname</string>
     <string name="hint_firstname">Enter your First name</string>
     <string name="hint_gender">Female</string>
     <string name="hint_date">dd/mm/yyyy</string>

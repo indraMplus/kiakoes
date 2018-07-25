@@ -44,6 +44,10 @@
         <item name="colorControlNormal">#575857</item>
         <item name="colorControlActivated">#0dc616</item>
     </style>
+    <style name="editTextStyle" parent="android:style/Widget.EditText">
+        <item name="android:textColor">@color/textcolors</item>
+    </style>
+
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 

@@ -55,12 +55,12 @@
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/textView23"
             android:layout_alignTop="@+id/imageView4"
-            android:fontFamily="@font/source_sans_pro"
+            android:layout_toEndOf="@+id/textView16"
+            android:fontFamily="@font/source_sans_pro_bold"
             android:text="Your Location"
-            android:textColor="@color/rounded"
-            android:textSize="18sp"
+            android:textColor="@color/text"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView

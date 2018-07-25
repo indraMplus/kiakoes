@@ -14,37 +14,6 @@ import java.util.ArrayList;
 public class SqlDatabase extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "kiakoe.db";
     private static final String TABLE_NAME = "user";
-    //private static final String COL_1 = "ID";
-//    private static final String COL_2 = "SURENAME";
-//    private static final String COL_3 = "FIRSTNAME";
-//    private static final String COL_4 = "GENDER";
-//    private static final String COL_5 = "DATEBIRTH";
-//    private static final String COL_6 = "USERNAME";
-//    private static final String COL_7 = "EMAIL";
-//    private static final String COL_8 = "EMAILCONFIRM";
-//    private static final String COL_9 = "PASSWORD";
-//    private static final String COL_10 = "PASSWORDCONFIRM";
-//    private static final String COL_11 = "PASSWORDHINT";
-//    private static final String COL_12 = "COUNTRY";
-//    private static final String COL_13 = "CONSTITUENCY";
-//    private static final String COL_14 = "MOBILE";
-//    private static final String COL_15 = "IMAGES";
-    //new code
-//    private static final String KEY_ID = "ID";
-//    private static final String KEY_SURENAME = "SURENAME";
-//    private static final String KEY_FIRSTNAME = "FIRSTNAME";
-//    private static final String KEY_GENDER = "GENDER";
-//    private static final String KEY_DATEBIRTH = "DATEBIRTH";
-//    private static final String KEY_USERNAME = "USERNAME";
-//    private static final String KEY_EMAIL = "EMAIL";
-//    private static final String KEY_EMAILCONFIRM = "EMAILCONFIRM";
-//    private static final String KEY_PASSWORD = "PASSWORD";
-//    private static final String KEY_PASSWORDCONFIRM = "PASSWORDCONFIRM";
-//    private static final String KEY_PASWORDHINT = "PASSWORDHINT";
-//    private static final String KEY_COUNTRY = "COUNTRY";
-//    private static final String KEY_CONSTITUENCY = "CONSTITUENCY";
-//    private static final String KEY_MOBILE = "MOBILE";
-//    private static final String KEY_IMAGES = "IMAGES";
     //new2
     private static final String KEY_ID = "id";
     private static final String KEY_SURENAME = "surename";
@@ -83,21 +52,15 @@ public class SqlDatabase extends SQLiteOpenHelper {
     public SqlDatabase(Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
-//    @Override
-//    public void onCreate(SQLiteDatabase db) {
-//        db.execSQL("create table " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT,SURENAME TEXT,FIRSTNAME TEXT,GENDER TEXT,DATEBIRTH TEXT,USERNAME TEXT,EMAIL TEXT,EMAILCONFIRM TEXT,PASSWORD TEXT,PASSWORDCONFIRM TEXT,PASSWORDHINT TEXT,COUNTRY TEXT,CONSTITUENCY TEXT,MOBILE TEXT,IMAGES BLOB)");
-//    }
+
     //NEW
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE_USER);
+        //Make default value for data user list
+        String sql = "INSERT INTO user (id, surename, firstname, gender, datebirth, username,email,password,passwordconfirm,passwordhint,country,constituency,mobile) VALUES ('1', 'Test', 'Testing', 'Male','00/00/0000','testerusername', 'test@mail.com', '12345', '12345','number','Vanuatu', 'Efate','876645432');";
+        db.execSQL(sql);
     }
-
-//    @Override
-//    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-//        db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
-//        onCreate(db);
-//    }
     //NEW
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -131,33 +94,6 @@ public class SqlDatabase extends SQLiteOpenHelper {
         return insert != -1;
     }
 
-//    public boolean insertData(String sure, String first
-//            , String gend, String datebirth, String user, String email, String emailConfirm, String password, String passwordConfrim, String passwordhint,
-//                              String country, String constituency, String mobileno, String imageuser) {
-//
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        ContentValues contentValues = new ContentValues();
-//        contentValues.put(COL_2,sure);
-//        contentValues.put(COL_3,first);
-//        contentValues.put(COL_4,gend);
-//        contentValues.put(COL_5,datebirth);
-//        contentValues.put(COL_6,user);
-//        contentValues.put(COL_7,email);
-//        contentValues.put(COL_8,emailConfirm);
-//        contentValues.put(COL_9,password);
-//        contentValues.put(COL_10,passwordConfrim);
-//        contentValues.put(COL_11,passwordhint);
-//        contentValues.put(COL_12,country);
-//        contentValues.put(COL_13,constituency);
-//        contentValues.put(COL_14,mobileno);
-//        contentValues.put(COL_15,imageuser);
-//        long result = db.insert(TABLE_NAME,null ,contentValues);
-//        if(result == -1)
-//            return false;
-//        else
-//            return true;
-//    }
-
     //new
     public ArrayList<User> getAllUsers() {
         ArrayList<User> userModelArrayList = new ArrayList<User>();
@@ -188,12 +124,6 @@ public class SqlDatabase extends SQLiteOpenHelper {
          }
         return userModelArrayList;
     }
-
-//    public Cursor getAllData() {
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        Cursor res = db.rawQuery("select * from "+TABLE_NAME,null);
-//        return res;
-//    }
     //new
     public int updateUser(int id, String surename, String firstname, String gender, String datebirth,
                            String username, String email, String password, String country, String constituency,

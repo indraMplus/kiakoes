@@ -63,20 +63,7 @@ public class RegisterDone extends AppCompatActivity {
             imgUserReg.setImageBitmap(bitmap);
         }
 
-        //inisial images
-        Bundle extras = getIntent().getExtras();
-        byte[] byteArray = new byte[0];
-
         Intent intent = getIntent();
-        //data from register 1
-//        final String sr3 = intent.getStringExtra(RegisterActivity.SURNAME);
-//        final String fn3 = intent.getStringExtra(RegisterActivity.FIRSTNAME);
-//        final String gd3 = intent.getStringExtra(RegisterActivity.GENDER);
-//        final String dt3 = intent.getStringExtra(RegisterActivity.DATEBIRTH);
-//        final Bitmap bitmap = (Bitmap)intent.getParcelableExtra("data");
-        //final Bitmap bitmap = (Bitmap)intent.getParcelableExtra(RegisterActivity.IMAGES);
-        //final String img1 = intent.getStringExtra(RegisterActivity.IMAGES);
-        //data from register 2
         final String usr2 = intent.getStringExtra(RegisterActivity2.USERNAME);
         final String em2 = intent.getStringExtra(RegisterActivity2.EMAIL);
         final String pa2 = intent.getStringExtra(RegisterActivity2.PASSWORD);
@@ -116,34 +103,6 @@ public class RegisterDone extends AppCompatActivity {
         });
     }
 
-//    @Override
-//    protected void onSaveInstanceState(Bundle outState){
-//        super.onSaveInstanceState(outState);
-//
-//        mobile =(EditText) findViewById(R.id.etSureName);
-//        spDone = (Spinner) findViewById(R.id.spLocation);
-//        spCons = (Spinner)findViewById(R.id.spCons);
-//
-//        String mo = mobile.getText().toString().trim();
-//        String sl = spDone.getSelectedItem().toString().trim();
-//        String co = spCons.getSelectedItem().toString();
-//
-//        outState.putString(LOCATION, mo);
-//        outState.putString(MOBILENO, sl);
-//        outState.putString(CONSTITUENCY,co);
-//    }
-
-//    public boolean onKeyDown(int keyCode, KeyEvent event)  {
-//        addUserDone();
-//        if (Integer.parseInt(android.os.Build.VERSION.SDK) > 5
-//                && keyCode == KeyEvent.KEYCODE_BACK
-//                && event.getRepeatCount() == 0) {
-//            Log.d("CDA", "onKeyDown Called");
-//            onBackPressed();
-//            return true;
-//        }
-//        return super.onKeyDown(keyCode, event);
-//    }
     private void addUserDone(){
         SharedPreferences preferences = getApplicationContext().getSharedPreferences(PREF,0);
         SharedPreferences.Editor editor = preferences.edit();

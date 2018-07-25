@@ -3,22 +3,17 @@ package com.mplus.kiakoe;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.Toast;
 
 public class RegisterActivity2 extends AppCompatActivity {
@@ -90,21 +85,7 @@ public class RegisterActivity2 extends AppCompatActivity {
                 }
             }
         });
-//        Intent intent = getIntent();
-//        String sr1 = intent.getStringExtra(RegisterActivity.SURNAME);
-//        String fn1 = intent.getStringExtra(RegisterActivity.FIRSTNAME);
-//        String gd1 = intent.getStringExtra(RegisterActivity.GENDER);
-//        String dt1 = intent.getStringExtra(RegisterActivity.DATEBIRTH);
-//
-//        //data from done
-//        String lo3 = intent.getStringExtra(RegisterDone.LOCATION);
-//        String mo3 = intent.getStringExtra(RegisterDone.MOBILENO);
-
-
     }
-//    public void goBack(){
-//        onBackPressed();
-//    }
     @Override
     protected void onSaveInstanceState(Bundle outState){
         super.onSaveInstanceState(outState);
@@ -134,8 +115,7 @@ public class RegisterActivity2 extends AppCompatActivity {
         String pas =  password.getText().toString().trim();
         String pac  = passwordConfirm.getText().toString().trim();
         String pah = passwordHint.getText().toString().trim();
-
-
+        //send value to another activity
         Intent bundle = new Intent(RegisterActivity2.this,RegisterDone.class);
         bundle.putExtra(USERNAME,uname);
         bundle.putExtra(EMAIL,em);
