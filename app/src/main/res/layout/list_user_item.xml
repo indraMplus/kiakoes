@@ -224,7 +224,7 @@
 
         <TextView
             android:id="@+id/txtCons"
-            android:layout_width="59dp"
+            android:layout_width="77dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignTop="@+id/text1"

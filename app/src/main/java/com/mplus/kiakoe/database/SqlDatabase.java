@@ -7,9 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-
 import com.mplus.kiakoe.Model.User;
-
 import java.util.ArrayList;
 
 
@@ -32,8 +30,6 @@ public class SqlDatabase extends SQLiteOpenHelper {
     private static final String KEY_MOBILE = "mobile";
     private static final String KEY_IMAGES = "images";
 
-
-
     //new code
     private static final String CREATE_TABLE_USER = "CREATE TABLE "
             + TABLE_NAME + "(" + KEY_ID
@@ -55,7 +51,6 @@ public class SqlDatabase extends SQLiteOpenHelper {
     public SqlDatabase(Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
-
     //NEW
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -92,11 +87,8 @@ public class SqlDatabase extends SQLiteOpenHelper {
         values.put(KEY_MOBILE, mobile);
 //        values.put(KEY_IMAGES, imageuser);
         // insert row in user table
-
         Log.d("Total :",""+values);
         return db.insert(TABLE_NAME, null, values);
-
-
     }
 
     //new

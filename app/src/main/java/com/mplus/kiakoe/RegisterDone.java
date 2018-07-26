@@ -1,8 +1,7 @@
 package com.mplus.kiakoe;
 
-import android.app.Activity;
+
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,13 +9,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.util.Log;
-import android.view.KeyEvent;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -24,10 +19,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import com.mplus.kiakoe.database.SqlDatabase;
-
-import java.util.Arrays;
 
 public class RegisterDone extends AppCompatActivity {
 
@@ -46,9 +38,8 @@ public class RegisterDone extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_done);
-        //myDb = new SqlDatabase(this);
-        databaseHelper = new SqlDatabase(this);
 
+        databaseHelper = new SqlDatabase(this);
         imgUserReg = (ImageView)findViewById(R.id.imgView);
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(RegisterDone.this);
@@ -89,8 +80,7 @@ public class RegisterDone extends AppCompatActivity {
         saveSql.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                boolean isInserted = myDb.insertData(sures,first,gends,dates,usr2,em2,emc2,pa2,pac2,pah2,spDone.getSelectedItem().toString(),spCons.getSelectedItem().toString()
-//                        ,mobile.getText().toString(), prevImg);
+                //add into sqlite database
                 databaseHelper.addUser(sures,first,gends,dates,usr2,em2,pa2,pac2,pah2,spDone.getSelectedItem().toString(),spCons.getSelectedItem().toString()
                         ,mobile.getText().toString(), prevImg);
                 Log.d("aaa","gambar" +prevImg);
@@ -116,10 +106,8 @@ public class RegisterDone extends AppCompatActivity {
     private void clearValue(){
         //mobile.setText("");
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-
         // set title
         alertDialogBuilder.setTitle("Attention");
-
         // set dialog message
         alertDialogBuilder
                 .setMessage("Do you want to add more user?")
@@ -141,10 +129,8 @@ public class RegisterDone extends AppCompatActivity {
                         startActivity(back);
                     }
                 });
-
         // create alert dialog
         AlertDialog alertDialog = alertDialogBuilder.create();
-
         // show it
         alertDialog.show();
     }

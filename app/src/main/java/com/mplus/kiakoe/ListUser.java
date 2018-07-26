@@ -50,6 +50,7 @@ public class ListUser extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent backhome = new Intent(ListUser.this,MainActivity.class);
+                backhome.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(backhome);
             }
         });
