@@ -1,10 +1,12 @@
 package com.mplus.kiakoe.database;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import com.mplus.kiakoe.Model.User;
 
@@ -29,6 +31,7 @@ public class SqlDatabase extends SQLiteOpenHelper {
     private static final String KEY_CONSTITUENCY = "constituency";
     private static final String KEY_MOBILE = "mobile";
     private static final String KEY_IMAGES = "images";
+
 
 
     //new code
@@ -68,7 +71,7 @@ public class SqlDatabase extends SQLiteOpenHelper {
         onCreate(db);
     }
     //new
-    public boolean addUser(String surename, String firstname, String gender, String datebirth,
+    public long addUser(String surename, String firstname, String gender, String datebirth,
                         String username, String email, String password,
                         String passwordconfirm, String passwordhint, String country, String constituency,
                         String mobile, String imageuser) {
@@ -87,23 +90,26 @@ public class SqlDatabase extends SQLiteOpenHelper {
         values.put(KEY_COUNTRY, country);
         values.put(KEY_CONSTITUENCY, constituency);
         values.put(KEY_MOBILE, mobile);
-        values.put(KEY_IMAGES, imageuser);
-        // insert row in students table
-        long insert = db.insert(TABLE_NAME, null, values);
+//        values.put(KEY_IMAGES, imageuser);
+        // insert row in user table
 
-        return insert != -1;
+        Log.d("Total :",""+values);
+        return db.insert(TABLE_NAME, null, values);
+
+
     }
 
     //new
     public ArrayList<User> getAllUsers() {
-        ArrayList<User> userModelArrayList = new ArrayList<User>();
+        ArrayList<User> userModelArrayList = new ArrayList<>();
 
         String selectQuery = "SELECT  * FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = db.rawQuery(selectQuery, null);
+        @SuppressLint("Recycle") Cursor c = db.rawQuery(selectQuery, null);
         // looping through all rows and adding to list
-         if (c.moveToFirst()) {
-                 //userModelArrayList.clear();
+         c.moveToFirst();
+         if (c != null) {
+                 userModelArrayList.clear();
                  do {
                      User userModel = new User();
                      userModel.setId(c.getInt(c.getColumnIndex(KEY_ID)));
@@ -120,7 +126,6 @@ public class SqlDatabase extends SQLiteOpenHelper {
 
                      userModelArrayList.add(userModel);
                  } while (c.moveToNext());
-                 c.close();
          }
         return userModelArrayList;
     }

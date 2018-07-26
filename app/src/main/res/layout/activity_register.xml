@@ -20,7 +20,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="527dp"
+        android:layout_height="539dp"
         android:layout_margin="6dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="16dp"
@@ -163,9 +163,9 @@
             android:layout_alignStart="@+id/etSureName"
             android:layout_alignTop="@+id/textView5"
             android:ems="10"
-            android:inputType="text"
             android:fontFamily="@font/source_sans_pro"
             android:hint="@string/hint_date"
+            android:inputType="text"
             android:textColor="@color/text"
             android:textColorHint="@color/txColor"
             android:textSize="12sp" />

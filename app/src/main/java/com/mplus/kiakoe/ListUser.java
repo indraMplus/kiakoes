@@ -7,6 +7,7 @@ import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -26,7 +27,7 @@ import java.util.Locale;
 public class ListUser extends AppCompatActivity {
 
     ListView listViewUser;
-    private ArrayList<User> userModelArrayList;
+    ArrayList<User> userModelArrayList;
     CustomAdapter customAdapter;
     SqlDatabase databaseHelper;
     User userModel;
@@ -36,6 +37,7 @@ public class ListUser extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_user);
+        //customAdapter.notifyDataSetChanged();
 
         Intent intent = getIntent();
         userModel = (User) intent.getSerializableExtra("user");
@@ -128,8 +130,10 @@ public class ListUser extends AppCompatActivity {
         });
         //new
         customAdapter = new CustomAdapter(this, userModelArrayList);
-        //customAdapter.notifyDataSetChanged();
+        customAdapter.notifyDataSetChanged();
         listViewUser.setAdapter(customAdapter);
+        Log.d("list","total list" +userModelArrayList);
+
+        //customAdapter.notifyDataSetChanged();
     }
 }
-

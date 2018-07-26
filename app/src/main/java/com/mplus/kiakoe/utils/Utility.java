@@ -18,7 +18,7 @@ import java.io.ByteArrayOutputStream;
 public class Utility {
     public static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 123;
 
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+    @TargetApi(Build.VERSION_CODES.N_MR1)
     public static boolean checkPermission(final Context context) {
         int currentAPIVersion = Build.VERSION.SDK_INT;
         if (currentAPIVersion >= android.os.Build.VERSION_CODES.M) {
@@ -29,7 +29,7 @@ public class Utility {
                     alertBuilder.setTitle("Permission necessary");
                     alertBuilder.setMessage("External storage permission is necessary");
                     alertBuilder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                        @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+                        @TargetApi(Build.VERSION_CODES.N_MR1)
                         public void onClick(DialogInterface dialog, int which) {
                             ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
                         }
@@ -48,15 +48,5 @@ public class Utility {
             return true;
         }
     }
-//    // convert from bitmap to byte array
-//    public static byte[] getBytes(Bitmap bitmap) {
-//        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-//        bitmap.compress(Bitmap.CompressFormat.PNG, 0, stream);
-//        return stream.toByteArray();
-//    }
-//
-//    // convert from byte array to bitmap
-//    public static Bitmap getImages(byte[] image) {
-//        return BitmapFactory.decodeByteArray(image, 0, image.length);
-//    }
+
 }
